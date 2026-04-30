@@ -1,0 +1,225 @@
+/* App.css - Global styles for Paradise Nursery Application */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Landing Page - App Component */
+.landing-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background image for landing page (responsive) */
+.landing-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="30" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="%23667eea"/><rect width="1200" height="600" fill="url(%23pattern)"/></svg>');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}
+
+.landing-content {
+  text-align: center;
+  z-index: 1;
+  color: white;
+  animation: fadeInUp 1s ease;
+}
+
+.landing-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.landing-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.get-started-btn {
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  background-color: #48bb78;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+}
+
+.get-started-btn:hover {
+  background-color: #38a169;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.get-started-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .landing-page {
+    min-height: 100vh;
+    padding: 2rem;
+  }
+
+  .landing-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-content p {
+    font-size: 1.1rem;
+  }
+
+  .get-started-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-content h1 {
+    font-size: 2rem;
+  }
+
+  .landing-content p {
+    font-size: 1rem;
+  }
+
+  .get-started-btn {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #2d3748;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  color: #48bb78;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.navbar-links a:hover {
+  color: #48bb78;
+}
+
+.cart-icon {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cart-icon a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #f56565;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #2d3748;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.footer p {
+  margin: 0.5rem 0;
+}
